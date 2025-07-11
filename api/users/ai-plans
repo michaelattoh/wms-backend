@@ -1,0 +1,9 @@
+{
+  "weddingDate": "2025-11-15",
+  "guestCount": 200,
+  "budget": 50000,
+  "preferences": {
+    "theme": "Rustic outdoor",
+    "priority": ["food", "music"]
+  }
+}
