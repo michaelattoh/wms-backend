@@ -47,16 +47,5 @@ Wedding Basket enables:
 git clone https://github.com/verixteams/wedding-basket.git
 cd wms-database
 
-## 📄 License
 
-This project is licensed under **Verix Teams Limited – All rights reserved**.
-
----
-
-## 📞 Contact
-
-For enquiries, partnerships, or contributions:
-
-- **Email:** [dev@verixteams.co.uk](mailto:dev@verixteams.co.uk)
-- **Website:** [www.verixteams.co.uk](https://www.verixteams.co.uk)
 
