@@ -25,6 +25,7 @@ app.use('/api/notifications', require('./routes/notifications.routes'));
 app.use('/api/ai-plans', require('./routes/aiPlans.routes'));
 app.use('/api/auth', require('./routes/auth.routes'));
 
+
 const vendorRoutes = require('./routes/vendorRoutes');
 app.use('/api/vendors', vendorRoutes);
 

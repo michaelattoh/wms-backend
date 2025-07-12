@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Wedding Basket | Dashboard</title>
+    <title> Wedding Basket | Add User</title>
     <meta name="Description" content="Wedding Basket">
     <meta name="Author" content="Verix Teams">
 	<meta name="keywords" content="Wedding Basket">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/brand-logos/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
     
     <!-- Choices JS -->
     <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
@@ -49,6 +49,17 @@
     <!-- Auto Complete CSS -->
     <link rel="stylesheet" href="assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css">
 
+
+    <link rel="stylesheet" href="assets/libs/quill/quill.snow.css">
+    <link rel="stylesheet" href="assets/libs/quill/quill.bubble.css">
+
+    <!-- Filepond CSS -->
+    <link rel="stylesheet" href="assets/libs/filepond/filepond.min.css">
+    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
+    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css">
+
+    <!-- Date & Time Picker CSS -->
+    <link rel="stylesheet" href="assets/libs/flatpickr/flatpickr.min.css">
 
 </head>
 
@@ -538,7 +549,7 @@
                     <!-- Start::header-element -->
                     <div class="header-element">
                         <div class="horizontal-logo">
-                            <a href="index.html" class="header-logo">
+                            <a href="dashboard.html" class="header-logo">
                                 <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
                                 <img src="assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
                                 <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
@@ -879,8 +890,8 @@
                         <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                             <li>
                                 <div class="dropdown-item text-center border-bottom">
-                                    <span id="userName" class="fw-medium">
-                                        Loading...
+                                    <span class="fw-medium">
+                                        Mr.Jack Miller
                                     </span>
                                     <span class="d-block fs-12 text-muted">Designer</span>
                                 </div>
@@ -889,20 +900,9 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="file-manager.html"><i class="ri-folder-4-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>File Manager<span class="badge bg-success text-fixed-white ms-auto fs-9">2</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="mail.html"><i class="ri-mail-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Mail Inbox</a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="mail-settings.html"><i class="ri-settings-5-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Settings</a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="ri-door-lock-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i><button id="logoutBtn">Logout</button></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="sign-in-cover.html"><i class="ri-door-lock-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Log Out</a></li>
                         </ul>
                     </li>  
-                    <script>
-                        const logoutBtn = document.getElementById('logoutBtn');
-                        logoutBtn.addEventListener('click', () => {
-                            // ✅ Clear token and user data
-                            localStorage.removeItem('token');
-                            localStorage.removeItem('user');
-                    
-                            // ✅ Redirect to login page
-                            window.location.href = '/sign-in.html';
-                        });
-                    </script>
                     <!-- End::header-element -->
 
                     <!-- Start::header-element -->
@@ -931,7 +931,7 @@
 
             <!-- Start::main-sidebar-header -->
             <div class="main-sidebar-header">
-                <a href="index.html" class="header-logo">
+                <a href="dashboard.html" class="header-logo">
                     <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
                     <img src="assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
                     <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
@@ -1213,696 +1213,73 @@
         <div class="main-content app-content">
             <div class="container-fluid">
 
-                <!-- Start::page-header -->
+                <!-- Page Header -->
                 <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
                     <div>
-                        <h1 class="page-title fw-medium fs-18 mb-0">Dashboard</h1>
+                        <h1 class="page-title fw-medium fs-18 mb-0">Add User</h1>
                     </div>
+                    
                 </div>
-                <!-- End::page-header -->
+                <!-- Page Header Close -->
 
                 <!-- Start::row-1 -->
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl">
-                        <div class="card custom-card crm-card">
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
-                                        <div class="p-2 border border-primary border-opacity-10 bg-primary-transparent rounded">
-                                            <span class="avatar avatar-md bg-primary svg-white">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg>
-                                            </span>
-                                        </div>
-                                        <div id="total-leads"></div>
-                                    </div>
-                                    <p class="flex-fill text-muted fs-14 mb-0">Total Income</p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mt-1">
-                                    <h4 class="mb-0 d-flex align-items-center">£ 45,893</h4>
-                                    <span class="text-success badge bg-success-transparent rounded-pill d-flex align-items-center fs-11 me-0 ms-2 mb-0"><i class="ri-arrow-left-up-line fs-11"></i>+2.5%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl">
-                        <div class="card custom-card crm-card">
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
-                                        <div class="p-2 border border-success border-opacity-10 bg-success-transparent rounded">
-                                            <span class="avatar avatar-md bg-success svg-white">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M205.66,61.64l-144,144a8,8,0,0,1-11.32-11.32l144-144a8,8,0,0,1,11.32,11.31ZM50.54,101.44a36,36,0,0,1,50.92-50.91h0a36,36,0,0,1-50.92,50.91ZM56,76A20,20,0,1,0,90.14,61.84h0A20,20,0,0,0,56,76ZM216,180a36,36,0,1,1-10.54-25.46h0A35.76,35.76,0,0,1,216,180Zm-16,0a20,20,0,1,0-5.86,14.14A19.87,19.87,0,0,0,200,180Z"></path></svg>
-                                            </span>
-                                        </div>
-                                        <div id="conversion-rate"></div>
-                                    </div>
-                                    <p class="flex-fill text-muted fs-14 mb-0">Total Bookings</p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mt-1">
-                                    <h4 class="mb-0 d-flex align-items-center">48 </h4>
-                                    <span class="text-danger badge bg-danger-transparent rounded-pill d-flex align-items-center fs-11 me-0 ms-2 mb-0"><i class="ri-arrow-left-down-line fs-11"></i>-2.5%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl">
-                        <div class="card custom-card crm-card">
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
-                                        <div class="p-2 border border-info border-opacity-10 bg-info-transparent rounded">
-                                            <span class="avatar avatar-md bg-info svg-white">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
-                                            </span>
-                                        </div>
-                                        <div id="pending-tasks"></div>
-                                    </div>
-                                    <p class="flex-fill text-muted fs-14 mb-0">Total Subscribers</p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mt-1">
-                                    <h4 class="mb-0 d-flex align-items-center">23 </h4>
-                                    <span class="text-success badge bg-success-transparent rounded-pill d-flex align-items-center fs-11 me-0 ms-2 mb-0"><i class="ri-arrow-left-up-line fs-11"></i>+2.5%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl">
-                        <div class="card custom-card crm-card">
-                            <div class="card-body">
-                                <div class="">
-                                    <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
-                                        <div class="p-2 border border-secondary border-opacity-10 bg-secondary-transparent rounded">
-                                            <span class="avatar avatar-md bg-secondary svg-white">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"></path></svg>
-                                            </span>
-                                        </div>
-                                        <div id="sales-pipeline"></div>
-                                    </div>
-                                    <p class="flex-fill text-muted fs-14 mb-0">Total Users</p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="fs-22 fw-medium mb-0 d-flex align-items-center">21 </div>
-                                    <span class="text-success badge bg-success-transparent rounded-pill d-flex align-items-center fs-11 me-0 ms-2 mb-0"><i class="ri-arrow-left-up-line fs-11"></i>+2.5%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End::row-1 -->
-                
-                <!-- Start::row-2 -->
-                <div class="row">
-                    <div class="col-md-12 col-xxl-6">
-                        <div class="card custom-card ">
-                            <div class="card-header justify-content-between">
-                                <div class="card-title">Revenue Analytics</div>
-                                <div class="d-flex gap-2">
-                                    <div class="btn btn-sm btn-outline-light">Today</div>
-                                    <div class="btn btn-sm btn-outline-light">Weakly</div>
-                                    <div class="btn btn-sm btn-light">Yearly</div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div id="crm-revenue-analytics"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-12 col-xxl-3">
-                                        <div class="card custom-card">
-                                            <div class="card-header">
-                                                <div class="card-title">
-                                                    Top Country Sales
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="list-unstyled top-countries-list">
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/us_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">United States</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 45%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">45%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/italy_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">Italy</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 67%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">67%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/spain_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">Spain</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 52%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">52%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/germany_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">Germany</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 32%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">32%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/uae_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">Uae</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 80%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">80%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center gap-3">
-                                                            <div class="lh-1">
-                                                                <span class="avatar avatar-sm avatar-rounded">
-                                                                    <img src="../assets/images/flags/mexico_flag.jpg" alt="">
-                                                                </span>
-                                                            </div>
-                                                            <div class="flex-fill d-flex align-items-end gap-3">
-                                                                <div class="flex-fill">
-                                                                    <span class="fw-medium d-block mb-1">Mexico</span>
-                                                                    <div class="progress progress-animate progress-sm" role="progressbar" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100">
-                                                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 39%">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="fw-medium lh-1">39%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-body add-products">
+                                <div class="row gx-4 gy-3">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6">
+                                        <div class="card custom-card shadow-none mb-0 border-0">
+                                            <div class="card-body p-0">
+                                                <div class="btn-list">
+                                                    <a href="add-user.html" class="add-user">
+                                                      
+                                                    </a>
+                                                  </div>
+                                                  
+                                                  <form id="addUserForm">
+                                                    <div class="row gy-3">
+                                                      <div class="col-xl-6">
+                                                        <label for="user-name" class="form-label">Name</label>
+                                                        <input type="text" class="form-control" id="user-name" placeholder="Name" name="name">
+                                                      </div>
+                                                  
+                                                      <div class="col-xl-6">
+                                                        <label for="user-phone" class="form-label">Phone</label>
+                                                        <input type="tel" class="form-control" id="user-phone" placeholder="Phone" name="phone">
+                                                      </div>
+                                                  
+                                                      <div class="col-xl-6">
+                                                        <label for="user-email" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" id="user-email" placeholder="Email" name="email">
+                                                      </div>
+                                                    </div>
+                                                  
+                                                    <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
+                                                      <button type="submit" class="btn btn-primary mb-2 mb-sm-0">
+                                                        Submit <i class="bi bi-download ms-2"></i>
+                                                      </button>
+                                                    </div>
+                                                  </form>
+                                                  
                                             </div>
                                         </div>
-                                    </div>
-
-                            <div class="col-md-12 col-xxl-3">
-                                <div class="card custom-card">
-                                    <div class="card-header">
-                                        <div class="card-title">
-                                            Recent Activity
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="list-unstyled recent-activity-sales-list">
-                                            <li>
-                                                <div class="mb-1">Acquired <span class="fw-medium text-primary">3,156</span> New Products</div>
-                                                <span class="d-block text-muted fs-12">25 mins ago</span>
-                                            </li>
-                                            <li>
-                                                <div class="mb-1">Updated <span class="fw-medium text-secondary">Ecommerce</span> Offer Details</div>
-                                                <span class="d-block text-muted fs-12">4 hrs ago</span>
-                                            </li>
-                                            <li>
-                                                <div class="mb-1">New Categories Added <span class="fw-medium text-success">Clothing & Sports</span></div>
-                                                <span class="d-block text-muted fs-12">Yesterday at 12:47PM</span>
-                                            </li>
-                                            <li>
-                                                <div class="mb-1">Resolved <span class="fw-medium text-warning">#32982</span> Invoice Issue</div>
-                                                <span class="d-block text-muted fs-12">24 Dec at 2:45PM</span>
-                                            </li>
-                                            <li>
-                                                <div class="mb-1">Sent a invoice to <span class="fw-medium text-danger">jhon@gmail.com</span> $15,000</div>
-                                                <span class="d-block text-muted fs-12">22 Dec at 10:15AM</span>
-                                            </li>
-                                            <li>
-                                                <div class="mb-1">Received <span class="fw-medium text-teal">457</span> Positive Reviews</div>
-                                                <span class="d-block text-muted fs-12">21 Dec at 11:55AM</span>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             
+                        </div>
+                    </div>
                 </div>
-                <!-- End::row-2 -->
-
-                <!-- Start::row-4 -->
-                <div class="row">
-                    <div class="col-xl col-xl">
-                                <div class="card custom-card">
-                                    <div class="card-header justify-content-between">
-                                        <div class="card-title">
-                                            Recent Orders
-                                        </div>
-                                        <div class="d-flex flex-wrap gap-2"> 
-                                            <div> 
-                                                <input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example"> 
-                                            </div> 
-                                            <div class="dropdown"> 
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-wave waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false"> Sort By<i class="ri-arrow-down-s-line align-middle ms-1 d-inline-block"></i> 
-                                                </a> 
-                                                <ul class="dropdown-menu" role="menu"> 
-                                                    <li><a class="dropdown-item" href="javascript:void(0);">New</a></li> 
-                                                    <li><a class="dropdown-item" href="javascript:void(0);">Popular</a></li> 
-                                                    <li><a class="dropdown-item" href="javascript:void(0);">Relevant</a></li> 
-                                                </ul> 
-                                            </div> 
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table text-nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="row"><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob1" value="" aria-label="..."></th>
-                                                        <th scope="col">Product</th>
-                                                        <th scope="col">Category</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Customer</th>
-                                                        <th scope="col">Qty</th>
-                                                        <th scope="col">Date Ordered</th>
-                                                        <th scope="col">Price</th>
-                                                        <th scope="col">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob2" value="" aria-label="..."></td>
-                                                        <td>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="lh-1">
-                                                                    <span class="avatar avatar-md avatar-rounded">
-                                                                        <img src="../assets/images/ecommerce/jpg/1.jpg" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="fw-medium fs-13 mb-0 d-flex align-items-center"><a href="javascript:void(0);">Elegance Wall Clock</a></p>
-                                                                    <p class="fs-12 text-muted mb-0">TechBrand</p>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            Home Decor
-                                                        </td>
-                                                        <td><span class="badge bg-primary-transparent">Pending</span></td>
-                                                        <td>
-                                                            <span class="d-block fw-medium fs-13">John Smith</span>
-                                                            <span class="d-block text-muted fs-12 fw-normal">johnsmith@mail.com</span>
-                                                        </td>
-                                                        <td>
-                                                            8
-                                                        </td>
-                                                        <td>01 Dec 2024</td>
-                                                        <td class="fw-medium">$1,200</td>
-                                                        <td>
-                                                            <div class="btn-list">
-                                                                <button class="btn btn-sm btn-icon btn-secondary-light btn-wave rounded-circle">
-                                                                    <i class="ri-edit-line"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-icon btn-primary-light btn-wave rounded-circle">
-                                                                    <i class="ri-eye-line"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob3" value="" aria-label="..." checked=""></td>
-                                                        <td>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="lh-1">
-                                                                    <span class="avatar avatar-md avatar-rounded">
-                                                                        <img src="../assets/images/ecommerce/jpg/2.jpg" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="fw-medium fs-13 mb-0 d-flex align-items-center"><a href="javascript:void(0);">StrideX Pro</a></p>
-                                                                    <p class="fs-12 text-muted mb-0">WearCo</p>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            Footwear
-                                                        </td>
-                                                        <td>
-                                                            <span class="badge bg-success-transparent">Completed</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="d-block fw-medium fs-13">Alice Brown</span>
-                                                            <span class="d-block text-muted fs-12 fw-normal">aliceb@mail.com</span>
-                                                        </td>
-                                                        <td>
-                                                            15
-                                                        </td>
-                                                        <td>29 Nov 2024</td>
-                                                        <td class="fw-medium">$750</td>
-                                                        <td>
-                                                            <div class="btn-list">
-                                                                <button class="btn btn-sm btn-icon btn-secondary-light btn-wave rounded-circle">
-                                                                    <i class="ri-edit-line"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-icon btn-primary-light btn-wave rounded-circle">
-                                                                    <i class="ri-eye-line"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob4" value="" aria-label="..." checked=""></td>
-                                                        <td>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="lh-1">
-                                                                    <span class="avatar avatar-md avatar-rounded">
-                                                                        <img src="../assets/images/ecommerce/jpg/3.jpg" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="fw-medium mb-0 fs-13 d-flex align-items-center"><a href="javascript:void(0);">EduCarry 360</a></p>
-                                                                    <p class="fs-12 text-muted mb-0">DecorArts</p>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            School Supplies
-                                                        </td>
-                                                        <td>
-                                                            <span class="badge bg-secondary-transparent">Shipped</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="d-block fw-medium fs-13">Leo Phillip</span>
-                                                            <span class="d-block text-muted fs-12 fw-normal">leophillip@mail.com</span>
-                                                        </td>
-                                                        <td>
-                                                            10
-                                                        </td>
-                                                        <td>03 Dec 2024</td>
-                                                        <td class="fw-medium">$500</td>
-                                                        <td>
-                                                            <div class="btn-list">
-                                                                <button class="btn btn-sm btn-icon btn-secondary-light btn-wave rounded-circle">
-                                                                    <i class="ri-edit-line"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-icon btn-primary-light btn-wave rounded-circle">
-                                                                    <i class="ri-eye-line"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob5" value="" aria-label="..."></td>
-                                                        <td>
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="lh-1">
-                                                                    <span class="avatar avatar-md avatar-rounded">
-                                                                        <img src="../assets/images/ecommerce/jpg/4.jpg" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="fw-medium mb-0 fs-13 d-flex align-items-center"><a href="javascript:void(0);">BloomCraft Pot</a></p>
-                                                                    <p class="fs-12 text-muted mb-0">FurniWorld</p>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            Garden & Decor
-                                                        </td>
-                                                        <td>
-                                                            <span class="badge bg-warning-transparent">Pending</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="d-block fw-medium fs-13">Michael Green</span>
-                                                            <span class="d-block text-muted fs-12 fw-normal">mgreen@mail.com</span>
-                                                        </td>
-                                                        <td>
-                                                            3
-                                                        </td>
-                                                        <td>30 Nov 2024</td>
-                                                        <td class="fw-medium">$2,400</td>
-                                                        <td>
-                                                            <div class="btn-list">
-                                                                <button class="btn btn-sm btn-icon btn-secondary-light btn-wave rounded-circle">
-                                                                    <i class="ri-edit-line"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-icon btn-primary-light btn-wave rounded-circle">
-                                                                    <i class="ri-eye-line"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="border-bottom-0"><input class="form-check-input" type="checkbox" id="checkboxNoLabeljob7" value="" aria-label="..."></td>
-                                                        <td class="border-bottom-0">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <div class="lh-1">
-                                                                    <span class="avatar avatar-md avatar-rounded">
-                                                                        <img src="../assets/images/ecommerce/jpg/5.jpg" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="fw-medium mb-0 fs-13 d-flex align-items-center"><a href="javascript:void(0);">Leather Wallet</a></p>
-                                                                    <p class="fs-12 text-muted mb-0">StylePro</p>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                            Accessories
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                            <span class="badge bg-danger-transparent">In Progress</span>
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                            <span class="d-block fw-medium fs-13">BrewBuddy Mug</span>
-                                                            <span class="d-block text-muted fs-12 fw-normal">Kitchen & Dining</span>
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                            20
-                                                        </td>
-                                                        <td class="border-bottom-0">02 Dec 2024</td>
-                                                        <td class="fw-medium border-bottom-0">$600</td>
-                                                        <td class="border-bottom-0">
-                                                            <div class="btn-list">
-                                                                <button class="btn btn-sm btn-icon btn-secondary-light btn-wave rounded-circle">
-                                                                    <i class="ri-edit-line"></i>
-                                                                </button>
-                                                                <button class="btn btn-sm btn-icon btn-primary-light btn-wave rounded-circle">
-                                                                    <i class="ri-eye-line"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer"> 
-                                        <div class="d-flex align-items-center"> 
-                                            <div> Showing 5 Entries <i class="bi bi-arrow-right ms-2 fw-medium"></i> </div>
-                                            <div class="ms-auto"> 
-                                            <nav aria-label="Page navigation" class="pagination-style-4"> 
-                                                <ul class="pagination mb-0"> 
-                                                    <li class="page-item disabled"> <a class="page-link" href="javascript:void(0);"> Prev </a> </li>
-                                                        <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li> 
-                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li> 
-                                                        <li class="page-item"> <a class="page-link text-primary" href="javascript:void(0);"> next </a> </li> 
-                                                    </ul> 
-                                                </nav> 
-                                            </div> 
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-xl">
-                                <div class="card custom-card overflow-hidden">
-                                    <div class="card-header justify-content-between">
-                                        <div class="card-title">
-                                            Recent Transactions
-                                        </div>
-                                        <a href="javascript:void(0);" class="fs-12 text-muted"> View All<i class="ti ti-arrow-narrow-right ms-1"></i> </a>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table text-nowrap">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Payment Mode</th>
-                                                        <th scope="col" class="text-end">Amount Paid</th>
-                                                    </tr>
-                                                </thead> 
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex align-items-start gap-2">
-                                                                <div>
-                                                                    <span class="avatar avatar-md p-2 border">
-                                                                        <img src="../assets/images/media/payment-gateways/paypal.png" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <span class="d-block fw-medium mb-1">Paypal ****2783</span>
-                                                                    <span class="d-block fs-11 text-muted">Online Transaction</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-end">
-                                                                <span class="d-block fw-medium mb-1">$1,234.78</span>
-                                                                <span class="d-block fs-11 text-muted">Nov 22,2024</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex align-items-start gap-2">
-                                                                <div>
-                                                                    <span class="avatar avatar-md p-2 border">
-                                                                        <img src="../assets/images/media/payment-gateways/wallet.png" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <span class="d-block fw-medium mb-1">Digital Wallet</span>
-                                                                    <span class="d-block fs-11 text-muted">Online Transaction</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-end">
-                                                                <span class="d-block fw-medium mb-1">$623.99</span>
-                                                                <span class="d-block fs-11 text-muted">Nov 22,2024</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex align-items-start gap-2">
-                                                                <div>
-                                                                    <span class="avatar avatar-md p-2 border">
-                                                                        <img src="../assets/images/media/payment-gateways/maestro.png" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <span class="d-block fw-medium mb-1">Mastro Card ****7893</span>
-                                                                    <span class="d-block fs-11 text-muted">Card Payment</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-end">
-                                                                <span class="d-block fw-medium mb-1">$1,324</span>
-                                                                <span class="d-block fs-11 text-muted">Nov 21,2024</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="d-flex align-items-start gap-2">
-                                                                <div>
-                                                                    <span class="avatar avatar-md p-2 border">
-                                                                        <img src="../assets/images/media/payment-gateways/stripe.png" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <span class="d-block fw-medium mb-1">Stripe</span>
-                                                                    <span class="d-block fs-11 text-muted">Online Payment</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-end">
-                                                                <span class="d-block fw-medium mb-1">$1,123.49</span>
-                                                                <span class="d-block fs-11 text-muted">Nov 20,2024</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="border-bottom-0">
-                                                            <div class="d-flex align-items-start gap-2">
-                                                                <div>
-                                                                    <span class="avatar avatar-md p-2 border">
-                                                                        <img src="../assets/images/media/payment-gateways/visa-card.png" alt="">
-                                                                    </span>
-                                                                </div>
-                                                                <div>
-                                                                    <span class="d-block fw-medium mb-1">Visa Card ****2563</span>
-                                                                    <span class="d-block fs-11 text-muted">Card Payment</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                            <div class="text-end">
-                                                                <span class="d-block fw-medium mb-1">$1,289</span>
-                                                                <span class="d-block fs-11 text-muted">Nov 18,2024</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>   
-                            </div>
-                </div>
-                <!-- End::row-4 -->
+                <!--End::row-1 -->
 
             </div>
         </div>
         <!-- End::app-content -->
 
-
-        <!-- Footer Start -->
-        <footer class="footer mt-auto py-3 bg-white text-center">
+        
+         <!-- Footer Start -->
+         <footer class="footer mt-auto py-3 bg-white text-center">
             <div class="container">
                 <span class="text-muted"> Copyright © <span id="year"></span> <a
                         href="javascript:void(0);" class="text-dark fw-medium">Wedding Basket</a>.
@@ -1932,8 +1309,6 @@
         </div>
 
     </div>
-
-    
 
     
     <!-- Scroll To Top -->
@@ -1972,32 +1347,72 @@
     <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
 
 
-    <!-- Apex Charts JS -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-
-    <!-- CRM Dashboard --> 
-    <script src="assets/js/crm-dashboard.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/js/custom.js"></script>
- 
     
     <!-- Custom-Switcher JS -->
     <script src="assets/js/custom-switcher.min.js"></script>
-    
-    <!-- for the name -->
+
+    <!-- Date & Time Picker JS -->
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+
+    <!-- Quill Editor JS -->
+    <script src="assets/libs/quill/quill.js"></script>
+
+    <!-- Filepond JS -->
+    <script src="assets/libs/filepond/filepond.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-transform/filepond-plugin-image-transform.min.js"></script>
+
+    <!-- Internal Add Products JS -->
+    <script src="assets/js/add-products.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- add user JS -->
     <script>
-        // Retrieve user from localStorage
-        const user = JSON.parse(localStorage.getItem('user'));
-    
-        if (!user) {
-            // Redirect to login if user data is missing
-            window.location.href = '/sign-in.html';
-        } else {
-            // Display user's name dynamically
-            document.getElementById('userName').innerText = user.name;
-        }
-    </script>
+        document.getElementById('addUserForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('user-name').value.trim();
+  const email = document.getElementById('user-email').value.trim();
+  const phone = document.getElementById('user-phone').value.trim();
+
+  if (!name || !email || !phone) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  try {
+    const response = await fetch('https://2d39fd105bf1.ngrok-free.app/api/users/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message || 'Failed to add user');
+    } else {
+      alert('User added successfully!');
+      document.getElementById('addUserForm').reset();
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert('Something went wrong while adding the user.');
+  }
+});
+
+      </script>
 </body>
 
-</html> 
+</html>
