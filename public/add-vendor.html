@@ -11,9 +11,9 @@
     <meta name="Description" content="Wedding Basket">
     <meta name="Author" content="Verix Teams">
 	<meta name="keywords" content="Wedding Basket">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/brand-logos/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
     
     <!-- Choices JS -->
     <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
@@ -49,12 +49,17 @@
     <!-- Auto Complete CSS -->
     <link rel="stylesheet" href="assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css">
 
-    <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- DataTables -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="assets/libs/quill/quill.snow.css">
+    <link rel="stylesheet" href="assets/libs/quill/quill.bubble.css">
+
+    <!-- Filepond CSS -->
+    <link rel="stylesheet" href="assets/libs/filepond/filepond.min.css">
+    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
+    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css">
+
+    <!-- Date & Time Picker CSS -->
+    <link rel="stylesheet" href="assets/libs/flatpickr/flatpickr.min.css">
 
 </head>
 
@@ -1211,156 +1216,147 @@
                 <!-- Page Header -->
                 <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
                     <div>
-                        <h1 class="page-title fw-medium fs-18 mb-0">Users</h1>
+                       <h1 class="page-title fw-medium fs-18 mb-0">Add Vendor</h1>
                     </div>
-                    <div class="btn-list">
-                        <a href="add-user.html" class="add-user">
-                            <button class="btn btn-primary-light btn-wave">
-                                <i class="ri-user-add-line align-middle me-1"></i> Add User
-                        </button>
-                        </a>
-                        
-                    </div>
+                    
                 </div>
-
-                <style>
-                    .add-user {
-                        color: #000 !important;
-                        transition: .1s ease;
-                    }
-
-                    .add-user:hover {
-                        color: white !important;
-                    }
-                </style>
-                
                 <!-- Page Header Close -->
 
-                <!-- <div class="alert alert-secondary alert-dismissible fs-15 fade show mb-4">
-                    Refresh <span class="text-black fw-medium"> the page to see</span> new users.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x"></i></button>
-                </div> -->
-
-                <!-- Start:: row-4 -->
+                <!-- Start::row-1 -->
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card custom-card">
-                            <div class="card-header">
-                                <div class="card-title">All Users</div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="file-export" class="table table-bordered text-nowrap w-100">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Role</th>
-                                                <th>Date Created</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
+                            <div class="card-body add-products">
+                                <div class="row gx-4 gy-3">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6">
+                                        <div class="card custom-card shadow-none mb-0 border-0">
+                                            
+                                                <form id="add-vendor-form">
+                                                    <div class="card-body p-0">
+                                                            <div class="row gy-3">
+                                                                <div class="col-xl-6">
+                                                                    <label for="vendor-name" class="form-label">Name</label>
+                                                                    <input type="text" class="form-control" id="vendor-name" name="name" placeholder="Enter vendor name" required>
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <label for="vendor-phone" class="form-label">Phone</label>
+                                                                    <input type="tel" class="form-control" id="vendor-phone" name="phone" placeholder="Enter phone number" required>
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <label for="vendor-email" class="form-label">Email</label>
+                                                                    <input type="email" class="form-control" id="vendor-email" name="email" placeholder="Enter email address" required>
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <label for="vendor-contact" class="form-label">Contact Person</label>
+                                                                    <input type="text" class="form-control" id="vendor-contact" name="contact" placeholder="Enter contact person name" required>
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <label for="vendor-category" class="form-label">Category</label>
+                                                                    <select class="form-select" id="vendor-category" name="category" required>
+                                                                        <option selected disabled value="">Select a category</option>
+                                                                        <option value="Catering">Catering</option>
+                                                                        <option value="Photography">Photography</option>
+                                                                        <option value="Decoration">Decoration</option>
+                                                                        <option value="Venue">Venue</option>
+                                                                        <option value="Music">Music</option>
+                                                                        <option value="Beverages">Beverages</option>
+                                                                        <option value="Florist">Florist</option>
+                                                                        <option value="Videography">Videography</option>  
+                                                                        <option value="Logistics">Logistics</option>
+                                                                        <option value="Makeup">Makeup Artist</option>
+                                                                        <option value="Cake">Cake & Pasteries</option>
+                                                                        <option value="Entertainment">Entertainment</option>
+                                                                        <option value="Branding">Branding</option>
+                                                                        <option value="Eventp">Event Planner</option>
+                                                                        <option value="Lighting">Lighting</option>
+                                                                        <option value="Other">Other</option>
+                                                                        <!-- Add more categories as needed -->
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-xl-6" id="other-category-wrapper" style="display: none;">
+                                                                        <label for="other-category" class="form-label">Specify Other Category</label>
+                                                                        <input type="text" class="form-control" id="other-category" placeholder="Enter category" />
+                                                                </div>
+                                                                <div class="col-xl-12">
+                                                                    <label for="vendor-address" class="form-label">Address</label>
+                                                                    <textarea class="form-control" id="vendor-address" name="address" rows="3" placeholder="Enter full address" required></textarea>
+                                                                </div>
+                                                                <div class="col-xl-12 text-end">
+                                                                    <button type="submit" class="btn btn-primary mt-3">Add Vendor</button>
+                                                                </div>
+                                                            </div>
+                                                    </div>   
+                                                </form>
+                                                    <!-- show/hide other input -->
+                                                <script>
+                                                   document.addEventListener('DOMContentLoaded', function () {
+                                    const form = document.getElementById('add-vendor-form');
+                                    const categorySelect = document.getElementById('vendor-category');
+                                    const otherCategoryInput = document.getElementById('other-category');
+
+  // ... category toggle logic ...
+  const otherCategoryWrapper = document.getElementById('other-category-wrapper');
+
+  categorySelect.addEventListener('change', function () {
+    if (categorySelect.value === 'Other') {
+        otherCategoryWrapper.style.display = 'block';
+        otherCategoryInput.setAttribute('required', 'required');
+    } else {
+        otherCategoryWrapper.style.display = 'none';
+        otherCategoryInput.removeAttribute('required')
+    }
+  });
+
+  // Handle form submission
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const vendorData = {
+      name: document.getElementById('vendor-name').value,
+      phone: document.getElementById('vendor-phone').value,
+      email: document.getElementById('vendor-email').value,
+      contact: document.getElementById('vendor-contact').value,
+      category: categorySelect.value === 'Other' ? otherCategoryInput.value : categorySelect.value,
+      address: document.getElementById('vendor-address').value
+    };
+
+    try {
+      const response = await fetch('https://2d39fd105bf1.ngrok-free.app/api/vendors/admin/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(vendorData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert('Vendor added successfully!');
+        form.reset();
+        document.getElementById('other-category-wrapper').style.display = 'none';
+      } else {
+        alert(result.message || 'Failed to add vendor.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('An error occurred while adding the vendor.');
+    }
+  });
+});
+
+                                                
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                    <!--  jQuery (must come before DataTables) -->
-                                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-                                    <!--  DataTables Core -->
-                                    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-
-                                    <!-- DataTables Buttons (Export) -->
-                                    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-                                    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-                                    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-
-                                    <!--  Export dependencies -->
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-
-                                <!--  Your Script to Load Users -->
-                                    
-                                <script>
-                                    async function loadUsers() {
-                                      try {
-                                        const response = await fetch('https://2d39fd105bf1.ngrok-free.app/api/users/all');
-                                        const users = await response.json();
-                                
-                                        const tbody = document.querySelector('#file-export tbody');
-                                        tbody.innerHTML = '';
-                                
-                                        users.forEach(user => {
-                                          const tr = document.createElement('tr');
-                                          tr.innerHTML = `
-                                            <td>${user.name || ''}</td>
-                                            <td>${user.email || ''}</td>
-                                            <td>${user.phone || ''}</td>
-                                            <td>${user.role || ''}</td>
-                                            <td>${new Date(user.createdAt).toLocaleDateString()}</td>
-                                            <td>
-                                              <div class="hstack gap-2 flex-wrap">
-                                                <a href="#" class="edit-user text-info fs-14 lh-1" data-id="${user.id}"><i class="ri-edit-line"></i></a>
-                                                <a href="#" class="delete-user text-danger fs-14 lh-1" data-id="${user.id}"><i class="ri-delete-bin-5-line"></i></a>
-                                              </div>
-                                            </td>
-                                          `;
-                                          tbody.appendChild(tr);
-                                        });
-                                
-                                        // Rebind delete/edit listeners
-                                        document.querySelectorAll('.delete-user').forEach(el => {
-                                          el.addEventListener('click', async (e) => {
-                                            e.preventDefault();
-                                            const id = el.getAttribute('data-id');
-                                            if (confirm('Are you sure you want to delete this user?')) {
-                                              try {
-                                                const res = await fetch(`https://2d39fd105bf1.ngrok-free.app/api/users/${id}`, {
-                                                  method: 'DELETE'
-                                                });
-                                                const data = await res.json();
-                                                alert(data.message);
-                                                loadUsers(); // Reload
-                                              } catch (err) {
-                                                console.error(err);
-                                                alert('Failed to delete user');
-                                              }
-                                            }
-                                          });
-                                        });
-                                
-                                        document.querySelectorAll('.edit-user').forEach(el => {
-                                          el.addEventListener('click', (e) => {
-                                            e.preventDefault();
-                                            const id = el.getAttribute('data-id');
-                                            window.location.href = `edit-user.html?id=${id}`;
-                                          });
-                                        });
-                                
-                                        // Reinitialize DataTable
-                                        if ($.fn.DataTable.isDataTable('#file-export')) {
-                                          $('#file-export').DataTable().clear().destroy();
-                                        }
-                                
-                                        $('#file-export').DataTable({
-                                          dom: 'Bfrtip',
-                                          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-                                        });
-                                
-                                      } catch (err) {
-                                        console.error('Failed to fetch users', err);
-                                      }
-                                    }
-                                
-                                    document.addEventListener('DOMContentLoaded', loadUsers);
-                                  </script>
-                                      
                             </div>
+                            
                         </div>
                     </div>
                 </div>
-                <!-- End:: row-4 -->
+                <!--End::row-1 -->
 
             </div>
         </div>
@@ -1398,7 +1394,7 @@
         </div>
 
     </div>
-    
+
     
     <!-- Scroll To Top -->
     <div class="scrollToTop">
@@ -1435,17 +1431,33 @@
     <!-- Date & Time Picker JS -->
     <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
 
+
+    
     <!-- Custom-Switcher JS -->
     <script src="assets/js/custom-switcher.min.js"></script>
 
-   
+    <!-- Date & Time Picker JS -->
+    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
 
-    <!-- Datatables Cdn -->
-    
+    <!-- Quill Editor JS -->
+    <script src="assets/libs/quill/quill.js"></script>
 
-    <!-- Internal Datatables JS -->
-    <script src="assets/js/datatables.js"></script>
-    
+    <!-- Filepond JS -->
+    <script src="assets/libs/filepond/filepond.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
+    <script src="assets/libs/filepond-plugin-image-transform/filepond-plugin-image-transform.min.js"></script>
+
+    <!-- Internal Add Products JS -->
+    <script src="assets/js/add-products.js"></script>
+
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 

@@ -39,6 +39,10 @@ app.get('/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
 
+// admin
+const adminRoutes = require('./routes/adminRoutes');
+app.use('/api/admins', adminRoutes);
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, '0.0.0.0', async () => {
     console.log(`Server running on port ${PORT}`);

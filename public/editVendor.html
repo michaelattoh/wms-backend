@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Vendor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Edit Vendor</h2>
+    <form id="edit-vendor-form">
+      <input type="hidden" id="vendor-id">
+
+      <div class="mb-3">
+        <label for="vendor-name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="vendor-name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="vendor-email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="vendor-email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="vendor-phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="vendor-phone" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="vendor-contact" class="form-label">Contact Person</label>
+        <input type="text" class="form-control" id="vendor-contact" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="vendor-category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="vendor-category" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="vendor-address" class="form-label">Address</label>
+        <textarea class="form-control" id="vendor-address" rows="3" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update Vendor</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParts = window.location.pathname.split('/');
+      const vendorId = urlParts[urlParts.length - 1];
+
+      try {
+        const res = await fetch(`https://2d39fd105bf1.ngrok-free.app/api/vendors/${vendorId}`);
+        const vendor = await res.json();
+
+        if (!res.ok) {
+          alert(vendor.message || 'Failed to load vendor');
+          return;
+        }
+
+        // Prefill form
+        document.getElementById('vendor-id').value = vendor.id;
+        document.getElementById('vendor-name').value = vendor.name;
+        document.getElementById('vendor-email').value = vendor.email;
+        document.getElementById('vendor-phone').value = vendor.phone;
+        document.getElementById('vendor-contact').value = vendor.contact;
+        document.getElementById('vendor-category').value = vendor.category;
+        document.getElementById('vendor-address').value = vendor.address;
+
+      } catch (err) {
+        console.error(err);
+        alert('Error fetching vendor data.');
+      }
+    });
+
+    document.getElementById('edit-vendor-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const vendorId = document.getElementById('vendor-id').value;
+
+      const updatedData = {
+        name: document.getElementById('vendor-name').value,
+        email: document.getElementById('vendor-email').value,
+        phone: document.getElementById('vendor-phone').value,
+        contact: document.getElementById('vendor-contact').value,
+        category: document.getElementById('vendor-category').value,
+        address: document.getElementById('vendor-address').value
+      };
+
+      try {
+        const res = await fetch(`https://2d39fd105bf1.ngrok-free.app/api/vendors/${vendorId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedData)
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          alert('Vendor updated successfully!');
+          window.location.href = '/vendors';
+        } else {
+          alert(result.message || 'Update failed.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('An error occurred.');
+      }
+    });
+  </script>
+</body>
+</html>
