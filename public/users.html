@@ -1290,7 +1290,8 @@
                                 
                                         const tbody = document.querySelector('#file-export tbody');
                                         tbody.innerHTML = '';
-                                
+                                        
+                                        
                                         users.forEach(user => {
                                           const tr = document.createElement('tr');
                                           tr.innerHTML = `
@@ -1345,7 +1346,8 @@
                                 
                                         $('#file-export').DataTable({
                                           dom: 'Bfrtip',
-                                          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                                          buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                                          order: [[4, 'asc']] // sort by created at (index 4) ascending
                                         });
                                 
                                       } catch (err) {
