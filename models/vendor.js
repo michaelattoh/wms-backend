@@ -1,21 +1,22 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Vendor extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
-      Vendor.associate = function(models) {
-        Vendor.hasMany(models.Booking, { foreignKey: 'vendorId' });
-      }
+      // One vendor can have many products
+      Vendor.hasMany(models.VendorProduct, {
+        as: 'products',
+        foreignKey: 'vendorId'
+      });
+
+      // One vendor can have many bookings (if you still use this)
+      Vendor.hasMany(models.Booking, {
+        foreignKey: 'vendorId'
+      });
     }
   }
+
   Vendor.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,
@@ -30,5 +31,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Vendor',
   });
+
   return Vendor;
 };

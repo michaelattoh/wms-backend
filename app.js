@@ -23,8 +23,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/event', require('./routes/guestsTables.routes'));
 app.use('/api/notifications', require('./routes/notifications.routes'));
 app.use('/api/ai-plans', require('./routes/aiPlans.routes'));
-app.use('/api/auth', require('./routes/auth.routes'));
-
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/uploads', express.static('uploads'));
 
 const vendorRoutes = require('./routes/vendorRoutes');
 app.use('/api/vendors', vendorRoutes);
@@ -52,4 +52,12 @@ app.listen(PORT, '0.0.0.0', async () => {
     } catch (error) {
         console.error('Database connection failed:', error);
     }
-})
+});
+
+//vendor products
+const productRoutes = require('./routes/productRoutes');
+app.use('/api/products', productRoutes);
+
+//subscription plan
+const subscriptionPlanRoutes = require('./routes/subscriptionPlans');
+app.use('/api/subscription-plans', subscriptionPlanRoutes);

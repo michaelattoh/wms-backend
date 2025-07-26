@@ -549,7 +549,7 @@
                     <!-- Start::header-element -->
                     <div class="header-element">
                         <div class="horizontal-logo">
-                            <a href="dashboard.html" class="header-logo">
+                            <a href="index.html" class="header-logo">
                                 <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
                                 <img src="assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
                                 <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
@@ -731,21 +731,124 @@
                             <div class="p-3">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="mb-0 fs-15 fw-medium">Notifications</p>
-                                    <span class="badge bg-secondary text-fixed-white" id="notification-data">0 Unread</span>
+                                    <span class="badge bg-secondary text-fixed-white" id="notifiation-data">5 Unread</span>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <ul class="list-unstyled mb-0" id="header-notification-scroll"></ul>
-                            
-                            <!-- view all  -->
-                              <div class="p-3 empty-header-item1 border-top" id="view-all-section">
+                            <ul class="list-unstyled mb-0" id="header-notification-scroll">
+                                <li class="dropdown-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="pe-2 lh-1">
+                                            <span class="avatar avatar-md avatar-rounded bg-primary">
+                                                <img src="assets/images/faces/1.jpg" alt="user1">
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-start justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fw-medium"><a href="chat.html">New User Registered</a></p>
+                                                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate"><span class="text-primary">John Doe</span> has registered as a new user.</div>
+                                                <div class="fw-normal fs-10 text-muted op-8">5 mins ago</div>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1">
+                                                    <i class="ri-close-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="pe-2 lh-1">
+                                            <span class="avatar avatar-md bg-primary avatar-rounded fs-20">
+                                                <i class="ri-money-dollar-circle-line lh-1 fs-16"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-start justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fw-medium"><a href="chat.html">Payment Received</a></p>
+                                                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate">You received a payment of $250 from Emily Davis.</div>
+                                                <div class="fw-normal fs-10 text-muted op-8">15 mins ago</div>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1">
+                                                    <i class="ri-close-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="pe-2 lh-1">
+                                            <span class="avatar avatar-md bg-orange avatar-rounded">
+                                                <img src="assets/images/faces/13.jpg" alt="user1">
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-start justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fw-medium"><a href="chat.html">Task Completed</a></p>
+                                                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate"><span class="text-secondary">"Design Homepage"</span> task was marked as complete.</div>
+                                                <div class="fw-normal fs-10 text-muted op-8">30 mins ago</div>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1">
+                                                    <i class="ri-close-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="pe-2 lh-1">
+                                            <span class="avatar avatar-md bg-success avatar-rounded">
+                                                <img src="assets/images/faces/11.jpg" alt="user1">
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-start justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fw-medium"><a href="chat.html">Server Alert</a></p>
+                                                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate">High CPU usage detected on Server 3.</div>
+                                                <div class="fw-normal fs-10 text-muted op-8">1 hr ago</div>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1">
+                                                    <i class="ri-close-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="pe-2 lh-1">
+                                            <span class="avatar avatar-md bg-info avatar-rounded">
+                                                <i class="ri-message-2-line lh-1 fs-16"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-start justify-content-between">
+                                            <div>
+                                                <p class="mb-0 fw-medium"><a href="chat.html">New Message</a></p>
+                                                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate">You have a new message from Sophia Johnson.</div>
+                                                <div class="fw-normal fs-10 text-muted op-8">2 hrs ago</div>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1">
+                                                    <i class="ri-close-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                    
+                            <div class="p-3 empty-header-item1 border-top">
                                 <div class="d-grid">
-                                    <a href="notifications.html" class="btn btn-primary btn-wave">View All</a>
+                                    <a href="javascript:void(0);" class="btn btn-primary btn-wave">View All</a>
                                 </div>
                             </div>
-
-                            <!-- no notifications placeholder -->
-                            <div class="p-5 empty-item1 d-none" id="no-notifications">
+                            <div class="p-5 empty-item1 d-none">
                                 <div class="text-center">
                                     <span class="avatar avatar-xl avatar-rounded bg-secondary-transparent">
                                         <i class="ri-notification-off-line fs-2"></i>
@@ -754,87 +857,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- notifications Js -->
-                            <script>
-  const apiUrl = "http://localhost:4000/api/users/all";
-
-  async function loadUserNotifications() {
-    try {
-      const res = await fetch(apiUrl);
-      const users = await res.json();
-
-      // Sort users by createdAt descending (most recent first)
-      const sortedUsers = users.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-      const latestUser = sortedUsers[0]; // Get the most recent one
-
-      const container = document.getElementById("header-notification-scroll");
-      const countDisplay = document.getElementById("notification-data");
-      container.innerHTML = "";
-
-      if (latestUser) {
-        const li = document.createElement("li");
-        li.classList.add("dropdown-item");
-
-        li.innerHTML = `
-          <div class="d-flex align-items-start">
-            <div class="pe-2 lh-1">
-              <span class="avatar avatar-md avatar-rounded bg-primary">
-                <img src="assets/images/faces/1.jpg" alt="user">
-              </span>
-            </div>
-            <div class="flex-grow-1 d-flex align-items-start justify-content-between">
-              <div>
-                <p class="mb-0 fw-medium"><a href="chat.html">New User Registered</a></p>
-                <div class="text-muted fw-normal fs-12 header-notification-text text-truncate">
-                  <span class="text-primary">${latestUser.name || 'Unknown User'}</span> has registered as a new user.
-                </div>
-                <div class="fw-normal fs-10 text-muted op-8">${latestUser.createdAt ? timeAgo(latestUser.createdAt) : 'Just now'}</div>
-              </div>
-              <div>
-                <a href="javascript:void(0);" class="min-w-fit-content dropdown-item-close1" onclick="dismissNotification(this)">
-                  <i class="ri-close-line"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        `;
-
-        container.appendChild(li);
-        countDisplay.innerText = `1 Unread`;
-      } else {
-        countDisplay.innerText = `0 Unread`;
-      }
-
-    } catch (err) {
-      console.error("Failed to fetch users for notifications", err);
-    }
-  }
-
-  function timeAgo(dateStr) {
-    const date = new Date(dateStr);
-    const now = new Date();
-    const seconds = Math.floor((now - date) / 1000);
-    if (seconds < 60) return "Just now";
-    const mins = Math.floor(seconds / 60);
-    if (mins < 60) return `${mins} min${mins > 1 ? "s" : ""} ago`;
-    const hrs = Math.floor(mins / 60);
-    if (hrs < 24) return `${hrs} hr${hrs > 1 ? "s" : ""} ago`;
-    const days = Math.floor(hrs / 24);
-    return `${days} day${days > 1 ? "s" : ""} ago`;
-  }
-
-  function dismissNotification(closeBtn) {
-    const item = closeBtn.closest(".dropdown-item");
-    if (item) {
-      item.remove();
-      document.getElementById("notification-data").innerText = `0 Unread`;
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", loadUserNotifications);
-</script>
-
-                          
                         <!-- End::main-header-dropdown -->
                     </li>
                     <!-- End::header-element -->
@@ -868,8 +890,8 @@
                         <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
                             <li>
                                 <div class="dropdown-item text-center border-bottom">
-                                    <span id="userName" class="fw-medium">
-                                        Loading...
+                                    <span class="fw-medium">
+                                        Mr.Jack Miller
                                     </span>
                                     <span class="d-block fs-12 text-muted">Designer</span>
                                 </div>
@@ -878,20 +900,9 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="file-manager.html"><i class="ri-folder-4-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>File Manager<span class="badge bg-success text-fixed-white ms-auto fs-9">2</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="mail.html"><i class="ri-mail-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Mail Inbox</a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="mail-settings.html"><i class="ri-settings-5-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Settings</a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="#"><i class="ri-door-lock-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i><button id="logoutBtn">Logout</button></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="sign-in-cover.html"><i class="ri-door-lock-line lh-1 p-1 rounded-circle bg-primary-transparent text-primary me-2 fs-14"></i>Log Out</a></li>
                         </ul>
                     </li>  
-                    <script>
-                        const logoutBtn = document.getElementById('logoutBtn');
-                        logoutBtn.addEventListener('click', () => {
-                            // ✅ Clear token and user data
-                            localStorage.removeItem('token');
-                            localStorage.removeItem('user');
-                    
-                            // ✅ Redirect to login page
-                            window.location.href = '/sign-in.html';
-                        });
-                    </script>
                     <!-- End::header-element -->
 
                     <!-- Start::header-element -->
@@ -920,7 +931,7 @@
 
             <!-- Start::main-sidebar-header -->
             <div class="main-sidebar-header">
-                <a href="dashboard.html" class="header-logo">
+                <a href="index.html" class="header-logo">
                     <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
                     <img src="assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
                     <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
@@ -943,7 +954,7 @@
 
                         <!-- Start::slide -->
                         <li class="slide">
-                            <a href="dashboard.html" class="side-menu__item">
+                            <a href="index.html" class="side-menu__item">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
                                 <span class="side-menu__label">Dashboards</span>
                             </a>
@@ -1205,7 +1216,7 @@
                 <!-- Page Header -->
                 <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
                     <div>
-                       <h1 class="page-title fw-medium fs-18 mb-0">Add Vendor</h1>
+                        <h1 class="page-title fw-medium fs-18 mb-0">Add Subscription Plan</h1>
                     </div>
                     
                 </div>
@@ -1214,135 +1225,78 @@
                 <!-- Start::row-1 -->
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="card custom-card">
+                        <form id="add-subscription-form" class="card custom-card">
                             <div class="card-body add-products">
                                 <div class="row gx-4 gy-3">
                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6">
                                         <div class="card custom-card shadow-none mb-0 border-0">
-                                            
-                                                <form id="add-vendor-form">
-                                                    <div class="card-body p-0">
-                                                            <div class="row gy-3">
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-name" class="form-label">Name</label>
-                                                                    <input type="text" class="form-control" id="vendor-name" name="name" placeholder="Enter vendor name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-phone" class="form-label">Phone</label>
-                                                                    <input type="tel" class="form-control" id="vendor-phone" name="phone" placeholder="Enter phone number" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-email" class="form-label">Email</label>
-                                                                    <input type="email" class="form-control" id="vendor-email" name="email" placeholder="Enter email address" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-contact" class="form-label">Contact Person</label>
-                                                                    <input type="text" class="form-control" id="vendor-contact" name="contact" placeholder="Enter contact person name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-category" class="form-label">Category</label>
-                                                                    <select class="form-select" id="vendor-category" name="category" required>
-                                                                        <option selected disabled value="">Select a category</option>
-                                                                        <option value="Catering">Catering</option>
-                                                                        <option value="Photography">Photography</option>
-                                                                        <option value="Decoration">Decoration</option>
-                                                                        <option value="Venue">Venue</option>
-                                                                        <option value="Music">Music</option>
-                                                                        <option value="Beverages">Beverages</option>
-                                                                        <option value="Florist">Florist</option>
-                                                                        <option value="Videography">Videography</option>  
-                                                                        <option value="Logistics">Logistics</option>
-                                                                        <option value="Makeup">Makeup Artist</option>
-                                                                        <option value="Cake">Cake & Pasteries</option>
-                                                                        <option value="Entertainment">Entertainment</option>
-                                                                        <option value="Branding">Branding</option>
-                                                                        <option value="Eventp">Event Planner</option>
-                                                                        <option value="Lighting">Lighting</option>
-                                                                        <option value="Other">Other</option>
-                                                                        <!-- Add more categories as needed -->
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-xl-6" id="other-category-wrapper" style="display: none;">
-                                                                        <label for="other-category" class="form-label">Specify Other Category</label>
-                                                                        <input type="text" class="form-control" id="other-category" placeholder="Enter category" />
-                                                                </div>
-                                                                <div class="col-xl-12">
-                                                                    <label for="vendor-address" class="form-label">Address</label>
-                                                                    <textarea class="form-control" id="vendor-address" name="address" rows="3" placeholder="Enter full address" required></textarea>
-                                                                </div>
-                                                                <div class="col-xl-12 text-end">
-                                                                    <button type="submit" class="btn btn-primary mt-3">Add Vendor</button>
-                                                                </div>
-                                                            </div>
-                                                    </div>   
-                                                </form>
-                                                    <!-- show/hide other input -->
-                                                <script>
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                    const form = document.getElementById('add-vendor-form');
-                                    const categorySelect = document.getElementById('vendor-category');
-                                    const otherCategoryInput = document.getElementById('other-category');
-
-                                        // ... category toggle logic ...
-                                        const otherCategoryWrapper = document.getElementById('other-category-wrapper');
-
-                                        categorySelect.addEventListener('change', function () {
-                                            if (categorySelect.value === 'Other') {
-                                                otherCategoryWrapper.style.display = 'block';
-                                                otherCategoryInput.setAttribute('required', 'required');
-                                            } else {
-                                                otherCategoryWrapper.style.display = 'none';
-                                                otherCategoryInput.removeAttribute('required')
-                                            }
-                                        });
-
-                                        // Handle form submission
-                                        form.addEventListener('submit', async function (e) {
-                                            e.preventDefault();
-
-                                            const vendorData = {
-                                            name: document.getElementById('vendor-name').value,
-                                            phone: document.getElementById('vendor-phone').value,
-                                            email: document.getElementById('vendor-email').value,
-                                            contact: document.getElementById('vendor-contact').value,
-                                            category: categorySelect.value === 'Other' ? otherCategoryInput.value : categorySelect.value,
-                                            address: document.getElementById('vendor-address').value
-                                            };
-
-                                            try {
-                                            const response = await fetch('http://localhost:4000/api/vendors/admin/create', {
-                                                method: 'POST',
-                                                headers: {
-                                                'Content-Type': 'application/json'
-                                                },
-                                                body: JSON.stringify(vendorData)
-                                            });
-
-                                            const result = await response.json();
-
-                                            if (response.ok) {
-                                                alert('Vendor added successfully!');
-                                                form.reset();
-                                                document.getElementById('other-category-wrapper').style.display = 'none';
-                                            } else {
-                                                alert(result.message || 'Failed to add vendor.');
-                                            }
-                                            } catch (err) {
-                                            console.error(err);
-                                            alert('An error occurred while adding the vendor.');
-                                            }
-                                        });
-                                        });
-
-                                                
-                                                </script>
+                                            <div class="card-body p-0">
+                                                <div class="row gy-3">
+                                                    <div class="col-xl-6">
+                                                        <label for="plan-name" class="form-label">Name</label>
+                                                        <input type="text" class="form-control" id="plan-name" name="name" placeholder="Name" required>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <label for="plan-amount" class="form-label">Amount</label>
+                                                        <input type="number" class="form-control" id="plan-amount" name="amount" placeholder="Amount" required>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        
+                            <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary mb-2 mb-sm-0">Submit <i class="bi bi-download ms-2"></i></button>
+                            </div>
+                        </form>
+                        <script>
+                            // Wait for the DOM to load
+                            document.addEventListener('DOMContentLoaded', function () {
+                              const form = document.getElementById('add-subscription-form');
+                          
+                              form.addEventListener('submit', async function (e) {
+                                e.preventDefault(); // Prevent page reload
+                          
+                                // Get form data
+                                const name = document.getElementById('plan-name').value.trim();
+                                const amount = document.getElementById('plan-amount').value.trim();
+                          
+                                // Basic validation
+                                if (!name || !amount) {
+                                  alert('Please fill in both fields.');
+                                  return;
+                                }
+                          
+                                try {
+                                  const response = await fetch('/api/subscription-plans', {
+                                    method: 'POST',
+                                    headers: {
+                                      'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                      name: name,
+                                      amount: parseFloat(amount)
+                                    }),
+                                  });
+                          
+                                  const data = await response.json();
+                          
+                                  if (response.ok) {
+                                    alert('Subscription plan added successfully!');
+                                    form.reset(); // Clear the form
+                                  } else {
+                                    alert('Error: ' + data.message);
+                                  }
+                                } catch (error) {
+                                  console.error('Error:', error);
+                                  alert('Something went wrong. Please try again.');
+                                }
+                              });
+                            });
+                          </script>                                    
                             
-                        </div>
                     </div>
                 </div>
                 <!--End::row-1 -->
@@ -1450,8 +1404,6 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 
-    
-    
 </body>
 
 </html>

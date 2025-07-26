@@ -2,6 +2,7 @@ const { Vendor } = require('../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+
 exports.profile = async (req, res) => {
   try {
     const vendor = await Vendor.findByPk(req.vendor.vendorId);
@@ -64,6 +65,7 @@ exports.login = async (req, res) => {
 
 // Create vendor from admin (no password involved)
 exports.createByAdmin = async (req, res) => {
+  console.log("Incoming vendor data:", req.body); // added this
   const { name, email, phone, about, contact, category, address } = req.body;
 
   try {
@@ -151,3 +153,4 @@ exports.updateByAdmin = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+

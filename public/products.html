@@ -3,17 +3,18 @@
 
 <head>
 
+    
     <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Wedding Basket</title>
+    <title>Wedding Basket | Products</title>
     <meta name="Description" content="Wedding Basket">
     <meta name="Author" content="Verix Teams">
 	<meta name="keywords" content="Wedding Basket">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/brand-logos/favicon.png" type="image/x-icon">
     
     <!-- Choices JS -->
     <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
@@ -49,17 +50,6 @@
     <!-- Auto Complete CSS -->
     <link rel="stylesheet" href="assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css">
 
-
-    <link rel="stylesheet" href="assets/libs/quill/quill.snow.css">
-    <link rel="stylesheet" href="assets/libs/quill/quill.bubble.css">
-
-    <!-- Filepond CSS -->
-    <link rel="stylesheet" href="assets/libs/filepond/filepond.min.css">
-    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
-    <link rel="stylesheet" href="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css">
-
-    <!-- Date & Time Picker CSS -->
-    <link rel="stylesheet" href="assets/libs/flatpickr/flatpickr.min.css">
 
 </head>
 
@@ -756,7 +746,7 @@
                         </div>
                         <!-- notifications Js -->
                             <script>
-  const apiUrl = "http://localhost:4000/api/users/all";
+ // const apiUrl = "http://localhost:4000/api/users/all";
 
   async function loadUserNotifications() {
     try {
@@ -943,7 +933,7 @@
 
                         <!-- Start::slide -->
                         <li class="slide">
-                            <a href="dashboard.html" class="side-menu__item">
+                            <a href="index.html" class="side-menu__item">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
                                 <span class="side-menu__label">Dashboards</span>
                             </a>
@@ -1205,147 +1195,68 @@
                 <!-- Page Header -->
                 <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
                     <div>
-                       <h1 class="page-title fw-medium fs-18 mb-0">Add Vendor</h1>
+                        <h1 class="page-title fw-medium fs-18 mb-0">All Vendor Products</h1>
                     </div>
-                    
+                    <div class="btn-list">
+                        
+                            <a href="add-vendor-product.html" class="add-user">
+                                <button class="btn btn-primary-light btn-wave">
+                                <i class="ri-user-add-line align-middle me-1"></i> Add Vendor Product
+                                </button>
+                            </a>
+                    </div>
                 </div>
+
+                <style>
+                    .add-user {
+                        color: #000 !important;
+                        transition: .1s ease;
+                    }
+
+                    .add-user:hover {
+                        color: white !important;
+                    }
+                </style>
+                
                 <!-- Page Header Close -->
 
-                <!-- Start::row-1 -->
+                
+                <!-- Start:: row-4 -->
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card custom-card">
-                            <div class="card-body add-products">
-                                <div class="row gx-4 gy-3">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6">
-                                        <div class="card custom-card shadow-none mb-0 border-0">
-                                            
-                                                <form id="add-vendor-form">
-                                                    <div class="card-body p-0">
-                                                            <div class="row gy-3">
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-name" class="form-label">Name</label>
-                                                                    <input type="text" class="form-control" id="vendor-name" name="name" placeholder="Enter vendor name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-phone" class="form-label">Phone</label>
-                                                                    <input type="tel" class="form-control" id="vendor-phone" name="phone" placeholder="Enter phone number" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-email" class="form-label">Email</label>
-                                                                    <input type="email" class="form-control" id="vendor-email" name="email" placeholder="Enter email address" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-contact" class="form-label">Contact Person</label>
-                                                                    <input type="text" class="form-control" id="vendor-contact" name="contact" placeholder="Enter contact person name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-category" class="form-label">Category</label>
-                                                                    <select class="form-select" id="vendor-category" name="category" required>
-                                                                        <option selected disabled value="">Select a category</option>
-                                                                        <option value="Catering">Catering</option>
-                                                                        <option value="Photography">Photography</option>
-                                                                        <option value="Decoration">Decoration</option>
-                                                                        <option value="Venue">Venue</option>
-                                                                        <option value="Music">Music</option>
-                                                                        <option value="Beverages">Beverages</option>
-                                                                        <option value="Florist">Florist</option>
-                                                                        <option value="Videography">Videography</option>  
-                                                                        <option value="Logistics">Logistics</option>
-                                                                        <option value="Makeup">Makeup Artist</option>
-                                                                        <option value="Cake">Cake & Pasteries</option>
-                                                                        <option value="Entertainment">Entertainment</option>
-                                                                        <option value="Branding">Branding</option>
-                                                                        <option value="Eventp">Event Planner</option>
-                                                                        <option value="Lighting">Lighting</option>
-                                                                        <option value="Other">Other</option>
-                                                                        <!-- Add more categories as needed -->
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-xl-6" id="other-category-wrapper" style="display: none;">
-                                                                        <label for="other-category" class="form-label">Specify Other Category</label>
-                                                                        <input type="text" class="form-control" id="other-category" placeholder="Enter category" />
-                                                                </div>
-                                                                <div class="col-xl-12">
-                                                                    <label for="vendor-address" class="form-label">Address</label>
-                                                                    <textarea class="form-control" id="vendor-address" name="address" rows="3" placeholder="Enter full address" required></textarea>
-                                                                </div>
-                                                                <div class="col-xl-12 text-end">
-                                                                    <button type="submit" class="btn btn-primary mt-3">Add Vendor</button>
-                                                                </div>
-                                                            </div>
-                                                    </div>   
-                                                </form>
-                                                    <!-- show/hide other input -->
-                                                <script>
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                    const form = document.getElementById('add-vendor-form');
-                                    const categorySelect = document.getElementById('vendor-category');
-                                    const otherCategoryInput = document.getElementById('other-category');
-
-                                        // ... category toggle logic ...
-                                        const otherCategoryWrapper = document.getElementById('other-category-wrapper');
-
-                                        categorySelect.addEventListener('change', function () {
-                                            if (categorySelect.value === 'Other') {
-                                                otherCategoryWrapper.style.display = 'block';
-                                                otherCategoryInput.setAttribute('required', 'required');
-                                            } else {
-                                                otherCategoryWrapper.style.display = 'none';
-                                                otherCategoryInput.removeAttribute('required')
-                                            }
-                                        });
-
-                                        // Handle form submission
-                                        form.addEventListener('submit', async function (e) {
-                                            e.preventDefault();
-
-                                            const vendorData = {
-                                            name: document.getElementById('vendor-name').value,
-                                            phone: document.getElementById('vendor-phone').value,
-                                            email: document.getElementById('vendor-email').value,
-                                            contact: document.getElementById('vendor-contact').value,
-                                            category: categorySelect.value === 'Other' ? otherCategoryInput.value : categorySelect.value,
-                                            address: document.getElementById('vendor-address').value
-                                            };
-
-                                            try {
-                                            const response = await fetch('http://localhost:4000/api/vendors/admin/create', {
-                                                method: 'POST',
-                                                headers: {
-                                                'Content-Type': 'application/json'
-                                                },
-                                                body: JSON.stringify(vendorData)
-                                            });
-
-                                            const result = await response.json();
-
-                                            if (response.ok) {
-                                                alert('Vendor added successfully!');
-                                                form.reset();
-                                                document.getElementById('other-category-wrapper').style.display = 'none';
-                                            } else {
-                                                alert(result.message || 'Failed to add vendor.');
-                                            }
-                                            } catch (err) {
-                                            console.error(err);
-                                            alert('An error occurred while adding the vendor.');
-                                            }
-                                        });
-                                        });
-
-                                                
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="card-header">
+                                <div class="card-title">Vendor Products</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="vendor-products-table" class="table table-bordered text-nowrap w-100">
+                                        <thead>
+                                          <tr>
+                                            <th>Vendor</th>
+                                            <th>Category</th>
+                                            <th>Product Name</th>
+                                            <th>Quantity</th>
+                                            <th>Stock</th>
+                                            <th>Price</th>
+                                            <th>Sizes</th>
+                                            <th>Tags</th>
+                                            <th>Description</th>
+                                            <th>Publish Date</th>
+                                            <th>Actions</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="products-table-body">
+                                          <!-- Rows will be added dynamically here -->
+                                        </tbody>
+                                      </table>
+                                      
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
-                <!--End::row-1 -->
+                <!-- End:: row-4 -->
 
             </div>
         </div>
@@ -1383,7 +1294,9 @@
         </div>
 
     </div>
-
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
     
     <!-- Scroll To Top -->
     <div class="scrollToTop">
@@ -1425,33 +1338,76 @@
     <!-- Custom-Switcher JS -->
     <script src="assets/js/custom-switcher.min.js"></script>
 
-    <!-- Date & Time Picker JS -->
-    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
+    <!-- Jquery Cdn -->
 
-    <!-- Quill Editor JS -->
-    <script src="assets/libs/quill/quill.js"></script>
+    <!-- Datatables Cdn -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.6/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
-    <!-- Filepond JS -->
-    <script src="assets/libs/filepond/filepond.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
-    <script src="assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
-    <script src="assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.js"></script>
-    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-transform/filepond-plugin-image-transform.min.js"></script>
-
-    <!-- Internal Add Products JS -->
-    <script src="assets/js/add-products.js"></script>
-
+    <!-- Internal Datatables JS -->
+    <script src="assets/js/datatables.js"></script>
+    
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 
-    
-    
+    <!-- js for form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          fetch('http://localhost:4000/api/admin/products/all') 
+            .then(res => res.json())
+            .then(data => {
+              const tbody = document.getElementById('products-table-body');
+              tbody.innerHTML = '';
+        
+              if (!data.products || !Array.isArray(data.products) || data.products.length === 0) {
+                const row = `<tr><td colspan="11" class="text-center">No products found.</td></tr>`;
+                tbody.insertAdjacentHTML('beforeend', row);
+                return;
+              }
+        
+              data.products.forEach(product => {
+                const sizes = (product.sizes || []).join(', ');
+                const tags = (product.tags || []).join(', ');
+        
+                const row = `
+                  <tr>
+                    <td>${product.vendor?.name || 'N/A'}</td>
+                    <td>${product.vendor?.category || 'N/A'}</td>
+                    <td>${product.name || ''}</td>
+                    <td>${product.quantity || 0}</td>
+                    <td>${product.stock || 0}</td>
+                    <td>${product.price || 0}</td>
+                    <td>${sizes}</td>
+                    <td>${tags}</td>
+                    <td>${product.description || ''}</td>
+                    <td>${product.publishDateTime ? new Date(product.publishDateTime).toLocaleString() : ''}</td>
+                    <td>
+                      <div class="hstack gap-2 flex-wrap">
+                        <a href="#" class="text-info fs-14 lh-1"><i class="ri-edit-line"></i></a>
+                        <a href="#" class="text-danger fs-14 lh-1"><i class="ri-delete-bin-5-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', row);
+              });
+            })
+            .catch(err => {
+              console.error('Failed to load products:', err);
+              const tbody = document.getElementById('products-table-body');
+              tbody.innerHTML = `<tr><td colspan="11" class="text-center text-danger">Error loading products.</td></tr>`;
+            });
+        });
+        </script>
+        
+        
 </body>
 
 </html>

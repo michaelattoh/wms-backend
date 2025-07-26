@@ -9,7 +9,7 @@ router.get('/profile', authenticateVendor, vendorController.profile);
 
 // admin adds a vendor
 router.post('/admin/create', vendorController.createByAdmin);
-// get all vendors
+// get all vendors 
 router.get('/admin/all', vendorController.getAllVendors);
 // delete vendor
 router.delete('/admin/:id', vendorController.deleteVendor);

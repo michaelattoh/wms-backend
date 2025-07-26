@@ -51,7 +51,7 @@
       const vendorId = urlParts[urlParts.length - 1];
 
       try {
-        const res = await fetch(`https://2d39fd105bf1.ngrok-free.app/api/vendors/${vendorId}`);
+        const res = await fetch(`http://localhost:4000/api/vendors/${vendorId}`);
         const vendor = await res.json();
 
         if (!res.ok) {
@@ -89,7 +89,7 @@
       };
 
       try {
-        const res = await fetch(`https://2d39fd105bf1.ngrok-free.app/api/vendors/${vendorId}`, {
+        const res = await fetch(`http://localhost:4000/api/vendors/${vendorId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updatedData)

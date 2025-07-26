@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Wedding Basket</title>
+    <title>Wedding Basket | Add a Product</title>
     <meta name="Description" content="Wedding Basket">
     <meta name="Author" content="Verix Teams">
 	<meta name="keywords" content="Wedding Basket">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/brand-logos/favicon.png" type="image/x-icon">
     
     <!-- Choices JS -->
     <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
@@ -61,6 +61,12 @@
     <!-- Date & Time Picker CSS -->
     <link rel="stylesheet" href="assets/libs/flatpickr/flatpickr.min.css">
 
+    <!-- Tagify  -->
+    <link rel="stylesheet" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+
+
+    
 </head>
 
 <body>
@@ -745,6 +751,25 @@
                             </div>
 
                             <!-- no notifications placeholder -->
+                                <!-- Start::main-header-dropdown -->
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end" data-popper-placement="none">
+                            <div class="p-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 fs-15 fw-medium">Notifications</p>
+                                    <span class="badge bg-secondary text-fixed-white" id="notification-data">0 Unread</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0" id="header-notification-scroll"></ul>
+                            
+                            <!-- view all  -->
+                              <div class="p-3 empty-header-item1 border-top" id="view-all-section">
+                                <div class="d-grid">
+                                    <a href="notifications.html" class="btn btn-primary btn-wave">View All</a>
+                                </div>
+                            </div>
+
+                            <!-- no notifications placeholder -->
                             <div class="p-5 empty-item1 d-none" id="no-notifications">
                                 <div class="text-center">
                                     <span class="avatar avatar-xl avatar-rounded bg-secondary-transparent">
@@ -756,7 +781,7 @@
                         </div>
                         <!-- notifications Js -->
                             <script>
-  const apiUrl = "http://localhost:4000/api/users/all";
+ // const apiUrl = "http://localhost:4000/api/users/all";
 
   async function loadUserNotifications() {
     try {
@@ -833,6 +858,9 @@
 
   document.addEventListener("DOMContentLoaded", loadUserNotifications);
 </script>
+
+                          
+                        <!-- End::main-header-dropdown -->
 
                           
                         <!-- End::main-header-dropdown -->
@@ -1205,155 +1233,197 @@
                 <!-- Page Header -->
                 <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
                     <div>
-                       <h1 class="page-title fw-medium fs-18 mb-0">Add Vendor</h1>
+                        <h1 class="page-title fw-medium fs-18 mb-0">Add Vendor Product</h1>
                     </div>
-                    
                 </div>
                 <!-- Page Header Close -->
 
-                <!-- Start::row-1 -->
+            <!-- Start::row-1 -->
+            <form id="add-product-form" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card custom-card">
-                            <div class="card-body add-products">
-                                <div class="row gx-4 gy-3">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-6">
-                                        <div class="card custom-card shadow-none mb-0 border-0">
-                                            
-                                                <form id="add-vendor-form">
-                                                    <div class="card-body p-0">
-                                                            <div class="row gy-3">
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-name" class="form-label">Name</label>
-                                                                    <input type="text" class="form-control" id="vendor-name" name="name" placeholder="Enter vendor name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-phone" class="form-label">Phone</label>
-                                                                    <input type="tel" class="form-control" id="vendor-phone" name="phone" placeholder="Enter phone number" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-email" class="form-label">Email</label>
-                                                                    <input type="email" class="form-control" id="vendor-email" name="email" placeholder="Enter email address" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-contact" class="form-label">Contact Person</label>
-                                                                    <input type="text" class="form-control" id="vendor-contact" name="contact" placeholder="Enter contact person name" required>
-                                                                </div>
-                                                                <div class="col-xl-6">
-                                                                    <label for="vendor-category" class="form-label">Category</label>
-                                                                    <select class="form-select" id="vendor-category" name="category" required>
-                                                                        <option selected disabled value="">Select a category</option>
-                                                                        <option value="Catering">Catering</option>
-                                                                        <option value="Photography">Photography</option>
-                                                                        <option value="Decoration">Decoration</option>
-                                                                        <option value="Venue">Venue</option>
-                                                                        <option value="Music">Music</option>
-                                                                        <option value="Beverages">Beverages</option>
-                                                                        <option value="Florist">Florist</option>
-                                                                        <option value="Videography">Videography</option>  
-                                                                        <option value="Logistics">Logistics</option>
-                                                                        <option value="Makeup">Makeup Artist</option>
-                                                                        <option value="Cake">Cake & Pasteries</option>
-                                                                        <option value="Entertainment">Entertainment</option>
-                                                                        <option value="Branding">Branding</option>
-                                                                        <option value="Eventp">Event Planner</option>
-                                                                        <option value="Lighting">Lighting</option>
-                                                                        <option value="Other">Other</option>
-                                                                        <!-- Add more categories as needed -->
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-xl-6" id="other-category-wrapper" style="display: none;">
-                                                                        <label for="other-category" class="form-label">Specify Other Category</label>
-                                                                        <input type="text" class="form-control" id="other-category" placeholder="Enter category" />
-                                                                </div>
-                                                                <div class="col-xl-12">
-                                                                    <label for="vendor-address" class="form-label">Address</label>
-                                                                    <textarea class="form-control" id="vendor-address" name="address" rows="3" placeholder="Enter full address" required></textarea>
-                                                                </div>
-                                                                <div class="col-xl-12 text-end">
-                                                                    <button type="submit" class="btn btn-primary mt-3">Add Vendor</button>
-                                                                </div>
-                                                            </div>
-                                                    </div>   
-                                                </form>
-                                                    <!-- show/hide other input -->
-                                                <script>
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                    const form = document.getElementById('add-vendor-form');
-                                    const categorySelect = document.getElementById('vendor-category');
-                                    const otherCategoryInput = document.getElementById('other-category');
-
-                                        // ... category toggle logic ...
-                                        const otherCategoryWrapper = document.getElementById('other-category-wrapper');
-
-                                        categorySelect.addEventListener('change', function () {
-                                            if (categorySelect.value === 'Other') {
-                                                otherCategoryWrapper.style.display = 'block';
-                                                otherCategoryInput.setAttribute('required', 'required');
-                                            } else {
-                                                otherCategoryWrapper.style.display = 'none';
-                                                otherCategoryInput.removeAttribute('required')
-                                            }
-                                        });
-
-                                        // Handle form submission
-                                        form.addEventListener('submit', async function (e) {
-                                            e.preventDefault();
-
-                                            const vendorData = {
-                                            name: document.getElementById('vendor-name').value,
-                                            phone: document.getElementById('vendor-phone').value,
-                                            email: document.getElementById('vendor-email').value,
-                                            contact: document.getElementById('vendor-contact').value,
-                                            category: categorySelect.value === 'Other' ? otherCategoryInput.value : categorySelect.value,
-                                            address: document.getElementById('vendor-address').value
-                                            };
-
-                                            try {
-                                            const response = await fetch('http://localhost:4000/api/vendors/admin/create', {
-                                                method: 'POST',
-                                                headers: {
-                                                'Content-Type': 'application/json'
-                                                },
-                                                body: JSON.stringify(vendorData)
-                                            });
-
-                                            const result = await response.json();
-
-                                            if (response.ok) {
-                                                alert('Vendor added successfully!');
-                                                form.reset();
-                                                document.getElementById('other-category-wrapper').style.display = 'none';
-                                            } else {
-                                                alert(result.message || 'Failed to add vendor.');
-                                            }
-                                            } catch (err) {
-                                            console.error(err);
-                                            alert('An error occurred while adding the vendor.');
-                                            }
-                                        });
-                                        });
-
-                                                
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
+                  <div class="col-xl-12">
+                    <div class="card custom-card">
+                      <div class="card-body add-products">
+                        <div class="row gx-4 gy-3">
+                          <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
+                            <div class="card custom-card shadow-none mb-0 border-0">
+                              <div class="card-body p-0">
+                                <div class="row gy-3">
+                                     <!-- Add the Vendor dropdown -->
+                                     <div class="col-xl-6">
+                                        <label for="vendor-id" class="form-label">Vendor</label>
+                                        <select class="form-control" id="vendor-id" name="vendorId" required>
+                                          <option value="">Select Vendor</option>
+                                          <!-- JS will populate the rest -->
+                                        </select>
+                                      </div>
+                                
+                                <!-- Add the Product Name input -->
+                                <div class="col-xl-6">
+                                    <label for="product-name-add" class="form-label">Product Name</label>
+                                    <input type="text" class="form-control" id="product-name-add" name="productName" placeholder="Name" required>
                                 </div>
-                            </div>
                             
+                                  <div class="col-xl-6">
+                                    <label for="product-quantity-add" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" id="product-quantity-add" name="quantity" placeholder="Quantity">
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="product-stock-add" class="form-label">Stock</label>
+                                    <input type="number" class="form-control" id="product-stock-add" name="stock" placeholder="Stock">
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="product-price-add" class="form-label">Price</label>
+                                    <input type="text" class="form-control" id="product-price-add" name="price" placeholder="Price">
+                                  </div>
+                                  <div class="col-xl-6 color-selection">
+                                    <label for="product-color-add" class="form-label">Size</label>
+                                    <select class="form-control" name="size" id="product-color-add" multiple>
+                                      <option value="Small">Small</option>
+                                      <option value="Medium">Medium</option>
+                                      <option value="Large">Large</option>
+                                      <option value="Extra Large">Extra Large</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-xl-12">
+                                    <label for="product-tags" class="form-label">Product Tags</label>
+                                    <input type="text" class="form-control" id="product-tags" name="tags" placeholder="Type and press enter..." />
+                                  </div>
+                                  <div class="col-xl-12">
+                                    <label for="product-description-add" class="form-label">Product Description</label>
+                                    <textarea class="form-control" id="product-description-add" name="description" rows="2"></textarea>
+                                    <label for="product-description-add" class="form-label mt-1 fs-12 fw-normal text-muted mb-0">*Description should not exceed 1000 letters</label>
+                                  </div>
+                                  <div class="col-xl-12 product-documents-container">
+                                    <p class="fw-medium mb-2 fs-14">Product Images :</p>
+                                    <input type="file" class="product-Images" id="product-images" name="images" multiple>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-xxl-6 col-xl-12 col-lg-12 col-md-6">
+                            <div class="card custom-card shadow-none mb-0 border-0">
+                              <div class="card-body p-0">
+                                <div class="row gy-3">
+                                  <div class="col-xl-12">
+                                    <label class="form-label">Product Features</label>
+                                    <div id="product-features"></div>
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="product-actual-price" class="form-label">Actual Price</label>
+                                    <input type="text" class="form-control" id="product-actual-price" name="actualPrice" placeholder="Actual Price">
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="product-discount" class="form-label">Discount</label>
+                                    <input type="text" class="form-control" id="product-discount" name="discount" placeholder="Discount in %">
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="publish-date" class="form-label">Publish Date</label>
+                                    <input type="date" class="form-control" id="publish-date" name="publishDate" placeholder="Choose date">
+                                  </div>
+                                  <div class="col-xl-6">
+                                    <label for="publish-time" class="form-label">Publish Time</label>
+                                    <input type="time" class="form-control" id="publish-time" name="publishTime" placeholder="Choose time">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+              
                         </div>
+                      </div>
+              
+                      <div class="card-footer border-top border-block-start-dashed d-sm-flex justify-content-end">
+                        <button id="save-product-btn" class="btn btn-primary" type="submit">
+                          Save Product
+                        </button>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <!--End::row-1 -->
-
-            </div>
-        </div>
-        <!-- End::app-content -->
+              </form>
+              <!-- prodcut JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tagInput = document.getElementById('product-tags');
+            const tagify = new Tagify(tagInput);
+            const form = document.getElementById('add-product-form');
+            const vendorSelect = document.getElementById('vendor-id');
+        
+            // Fetch vendors and populate the dropdown
+            fetch('/api/vendors/admin/all') 
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Fetched vendors:", data);
+                    if (data.vendors && Array.isArray(data.vendors)) {
+                        data.vendors.forEach(vendor => {
+                            const option = document.createElement('option');
+                            option.value = vendor.id;
+                            option.textContent = `${vendor.name} (${vendor.category})`;
+                            vendorSelect.appendChild(option);
+                        });
+                    }
+                })
+                .catch(err => {
+                    console.error('Failed to load vendors:', err);
+                });
+        
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+        
+                const formData = new FormData(form);
+        
+                // Append date + time
+                const date = document.getElementById('publish-date')?.value || '';
+                const time = document.getElementById('publish-time')?.value || '';
+                const dateTime = `${date} ${time}`;
+                formData.append('publishDateTime', dateTime);
+        
+                // Append tags
+                const tags = tagify.value.map(tag => tag.value);
+                tags.forEach(tag => formData.append('tags[]', tag));
+        
+                // Append sizes
+                const sizes = Array.from(document.getElementById('product-color-add').selectedOptions).map(opt => opt.value);
+                sizes.forEach(size => formData.append('sizes[]', size));
+        
+                // Send to API
+                fetch('api/admin/products/create', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('Server Response:', data);
+                    if (data.success) {
+                        alert('Product added successfully!');
+        
+                        // Reset form
+                        form.reset();
+                        tagify.removeAllTags(); 
+                        Array.from(document.getElementById('product-color-add').options).forEach(opt => opt.selected = false);
+                        document.getElementById('product-images').value = '';
+                        const featuresContainer = document.getElementById('product-features');
+                        if (featuresContainer) featuresContainer.innerHTML = '';
+                    } else {
+                        alert(data.message || 'Failed to add product.');
+                    }
+                })
+                .catch(err => {
+                    console.error('Error submitting form:', err);
+                    alert('An error occurred.');
+                });
+            });
+        });
+        </script>
+        
+            <!-- End::app-content -->
 
         
-        <!-- Footer Start -->
-        <footer class="footer mt-auto py-3 bg-white text-center">
+         <!-- Footer Start -->
+         <footer class="footer mt-auto py-3 bg-white text-center">
             <div class="container">
                 <span class="text-muted"> Copyright © <span id="year"></span> <a
                         href="javascript:void(0);" class="text-dark fw-medium">Wedding Basket</a>.
@@ -1450,7 +1520,6 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 
-    
     
 </body>
 

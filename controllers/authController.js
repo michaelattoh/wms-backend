@@ -3,6 +3,7 @@ const appleSignin = require('apple-signin-auth');
 const { User } = require('../models');
 const { generateToken } = require('../utils/jwt');
 
+
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 exports.googleLogin = async (req, res) => {
@@ -63,3 +64,6 @@ exports.appleLogin = async (req, res) => {
     res.status(401).json({ error: 'Apple auth failed' });
   }
 };
+
+
+

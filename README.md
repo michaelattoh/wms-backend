@@ -44,8 +44,29 @@ Wedding Basket enables:
 ### **1. Clone the repository**
 
 ```bash
-git clone https://github.com/verixteams/wedding-basket.git
+git clone https://github.com/michaelattoh/wms-backend
 cd wms-database
+npm install
+npm run dev
 
+```
+### ***2. Flutter (Web & Mobile ) setup
+**Ensure Flutter SDK is installed***
+**Navigate to the flutter app directory**
 
+``` bash
+cd wms-app
+flutter pub get
+flutter run
 
+```
+
+## 📄 License
+This project is licensed under **Verix Teams Limited - All rights reserved**.
+
+---
+
+## 📞 Contact
+For enquiries, partnerships, or contributions:
+- **Email:** [dev@verixteams.co.uk] (mailto:dev@verixteams.co.uk)
+- **Website:** [www.verixteams.co.uk] (https://www.verixteams.co.uk)

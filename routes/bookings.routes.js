@@ -9,4 +9,11 @@ router.get('/user', verifyToken, bookings.getUserBookings);
 router.put('/:id', verifyToken, bookings.updateBooking);
 router.delete('/:id', verifyToken, bookings.cancelBooking);
 
+//all bookings
+router.get('/all', verifyToken, bookings.getAllBookings);
+
 module.exports = router;
+
+
+
+
